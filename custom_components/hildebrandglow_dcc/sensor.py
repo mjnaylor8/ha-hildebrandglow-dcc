@@ -383,7 +383,8 @@ class Standing(CoordinatorEntity, SensorEntity):
     _attr_entity_registry_enabled_default = (
         False  # Don't enable by default as less commonly used
     )
-
+    _attr_state_class = SensorStateClass.TOTAL
+    
     def __init__(self, coordinator, resource, virtual_entity) -> None:
         """Pass coordinator to CoordinatorEntity."""
         super().__init__(coordinator)
@@ -435,6 +436,7 @@ class Rate(CoordinatorEntity, SensorEntity):
     _attr_entity_registry_enabled_default = (
         False  # Don't enable by default as less commonly used
     )
+    _attr_state_class = SensorStateClass.TOTAL
 
     def __init__(self, coordinator, resource, virtual_entity) -> None:
         """Pass coordinator to CoordinatorEntity."""
